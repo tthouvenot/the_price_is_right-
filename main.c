@@ -6,7 +6,7 @@
 /*   By: tthouvenot <tthouvenot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 19:56:52 by tthouvenot        #+#    #+#             */
-/*   Updated: 2025/12/27 21:28:10 by tthouvenot       ###   ########.fr       */
+/*   Updated: 2025/12/27 22:05:43 by tthouvenot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,6 @@
 
 int	main(void)
 {
-	/* 
-	
-	Le juste prix!
-	On accueil un joueur et on l'invite à deviner un nombre entre x et y
-	Le joueur a 10 tentatives
-	A chaque tentative on lui dit + ou - selon s'il est au dessus ou en dessous
-	S'il trouve avant les 10 tentatives il gagne
-	Sinon il perd on lui propose de réessayer
-	Si oui on rejoue, si non on quitte.
-	
-	*/
-
 	/*
 	 PROJECT: Le Juste Prix
 	
@@ -41,15 +29,15 @@ int	main(void)
 	
 	 DONE: random number generation
 	
-	 TODO: player data structure
-	 TODO: header file
-	
-	 TODO: putstr
-	 TODO: putnbr
-	 TODO: atoi
+	 DONE: player data structure
+	 DONE: header file
 	*/
 
+	t_game game;
+	game.replay = 1;
 	srand(time(NULL));
-	printf("Nombre à deviner: %d", ft_guess_number());
+	
+	while(game.replay)
+		ft_game_loop(&game);
 	return (0);
 }
