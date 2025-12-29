@@ -6,7 +6,7 @@
 /*   By: tthouvenot <tthouvenot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 21:16:53 by tthouvenot        #+#    #+#             */
-/*   Updated: 2025/12/27 22:05:32 by tthouvenot       ###   ########.fr       */
+/*   Updated: 2025/12/29 10:47:05 by tthouvenot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 typedef struct s_player
 {
-	char			name;
+	char			name[32];
 	int				attempts;
 	int				has_won;
 	unsigned int	number;
@@ -44,5 +44,7 @@ typedef struct	s_game
 
 unsigned int	ft_guess_number(void);
 void			ft_game_loop(t_game *game);
+int				ft_read_input(char *buffer, int size);
+int				ft_game_intro(t_player *player);
 
 #endif

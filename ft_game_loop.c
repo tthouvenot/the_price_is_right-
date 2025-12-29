@@ -6,12 +6,13 @@
 /*   By: tthouvenot <tthouvenot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 21:35:03 by tthouvenot        #+#    #+#             */
-/*   Updated: 2025/12/27 22:06:00 by tthouvenot       ###   ########.fr       */
+/*   Updated: 2025/12/29 11:11:35 by tthouvenot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 #include <stdio.h>
+#include <string.h>
 
 /* 
 La loop de jeu est la suivante:
@@ -47,6 +48,13 @@ La loop de jeu est la suivante:
 
 void	ft_game_loop(t_game *game)
 {
-	printf("Nombre à deviner: %d", ft_guess_number());
+	t_player player;
+	int launch_game;
+	launch_game = ft_game_intro(&player);
+
+	if(launch_game)
+		printf("Il a dit oui!!!! \n");
+	
+	printf("Nombre à deviner: %d\n", ft_guess_number());
 	game->replay = 0;
 }

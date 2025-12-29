@@ -6,7 +6,7 @@
 /*   By: tthouvenot <tthouvenot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 19:56:52 by tthouvenot        #+#    #+#             */
-/*   Updated: 2025/12/27 22:05:43 by tthouvenot       ###   ########.fr       */
+/*   Updated: 2025/12/29 11:15:21 by tthouvenot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(void)
 	 PROJECT: Le Juste Prix
 	
 	 TODO: game loop
-	 TODO: read input
+	 DONE: read input
 	 TODO: compare guess
 	 TODO: attempts management
 	 TODO: print result
