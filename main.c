@@ -6,7 +6,7 @@
 /*   By: tthouvenot <tthouvenot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 19:56:52 by tthouvenot        #+#    #+#             */
-/*   Updated: 2025/12/29 11:15:21 by tthouvenot       ###   ########.fr       */
+/*   Updated: 2025/12/29 19:13:39 by tthouvenot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,9 @@
 
 int	main(void)
 {
-	/*
-	 PROJECT: Le Juste Prix
+	t_game	game;
 	
-	 TODO: game loop
-	 DONE: read input
-	 TODO: compare guess
-	 TODO: attempts management
-	 TODO: print result
-	 TODO: end of game / replay
-	
-	 DONE: random number generation
-	
-	 DONE: player data structure
-	 DONE: header file
-	*/
-
-	t_game game;
-	game.replay = 1;
 	srand(time(NULL));
-	
-	while(game.replay)
-		ft_game_loop(&game);
+	ft_game_loop(&game);
 	return (0);
 }

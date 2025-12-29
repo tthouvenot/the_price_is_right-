@@ -6,7 +6,7 @@
 /*   By: tthouvenot <tthouvenot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 21:16:53 by tthouvenot        #+#    #+#             */
-/*   Updated: 2025/12/29 10:47:05 by tthouvenot       ###   ########.fr       */
+/*   Updated: 2025/12/29 17:58:30 by tthouvenot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ typedef struct	s_game
 **************/
 
 #define MAX_ATTEMPTS 10
-#define REPLAY 1
 
 /**************************
 ***	FUNCTIONS PROTOTYPE ***
@@ -46,5 +45,7 @@ unsigned int	ft_guess_number(void);
 void			ft_game_loop(t_game *game);
 int				ft_read_input(char *buffer, int size);
 int				ft_game_intro(t_player *player);
+void			ft_game(t_game *game, t_player *player);
+void			ft_game_end(t_player *player, t_game *game);
 
 #endif

@@ -6,55 +6,28 @@
 /*   By: tthouvenot <tthouvenot@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 21:35:03 by tthouvenot        #+#    #+#             */
-/*   Updated: 2025/12/29 11:11:35 by tthouvenot       ###   ########.fr       */
+/*   Updated: 2025/12/29 19:13:11 by tthouvenot       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 #include <stdio.h>
-#include <string.h>
-
-/* 
-La loop de jeu est la suivante:
-	-quel est votre nom
-	L'utilisateur répond (dois je mettre une limite ou tester l'entrée?)
-	J'enregistre dans sa structure player.name
-	
-	Je présente les règles et demande s'il est prêt à jouer
-		si non -> on quitte l'app
-		Si oui on rentre dans le jeu
-
-	Le jeu:
-		On récupère les valeurs du joueur (attempts, etc)
-		On appelle ft_guess_number pour déterminer le nombre à chercher
-		On lui affiche les infos
-		On lui demande de donner un nombre
-		Il rentre une donnée
-			-si pas un nombre alors on l'engueule et il a une tentative en moins
-			-si un nombre on le compare à celui du jeu
-				- si trop haut on dit moins on enlève une tentative
-				- si trop bas on dit plus on enlève une tentative
-				- si le bon on passe player.has_won a 1 et on va à la fin du jeu
-				- si tentative à 0 on va à la fin du jeu
-	
-	La fin du jeu:
-		On vérifie le player.has_won
-			si à 1 on le félicite
-			si à 0 on le réprimande et on donne la bonne valeur
-		On lui demande s'il veut refaire une partie
-			si oui on revient au jeu
-			si non on lui dit au revoir
-*/
 
 void	ft_game_loop(t_game *game)
 {
 	t_player player;
 	int launch_game;
-	launch_game = ft_game_intro(&player);
-
-	if(launch_game)
-		printf("Il a dit oui!!!! \n");
 	
-	printf("Nombre à deviner: %d\n", ft_guess_number());
-	game->replay = 0;
+	launch_game = ft_game_intro(&player);
+	if(!launch_game)
+	{
+		game->replay = 0;
+		return;
+	}
+	game->replay = 1;
+	while (game->replay)
+	{
+		ft_game(game, &player);
+		ft_game_end(&player, game);
+	}
 }
